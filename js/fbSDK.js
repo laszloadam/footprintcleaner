@@ -3,7 +3,7 @@ window.fbAsyncInit = function () {
         appId: '733089071220758',
         cookie: true,
         xfbml: true,
-        version: 'v13.0'
+        version: 'v13.2'
     });
 
     FB.getLoginStatus(function(response) {
@@ -23,7 +23,14 @@ window.fbAsyncInit = function () {
 function statusChangeCallback(response){
     if(response.status === 'connected'){
       console.log('Logged in and authenticated');
-      console.log(response);
+      FB.api(
+        "/{person-id}/",
+        function (response) {
+          if (response && !response.error) {
+            console.log(response);
+          }
+        }
+    );
     } else {
       console.log('Not authenticated');
     }
