@@ -23,6 +23,7 @@ window.fbAsyncInit = function () {
 function statusChangeCallback(response){
     if(response.status === 'connected'){
       console.log('Logged in and authenticated');
+      console.log(response);
     } else {
       console.log('Not authenticated');
     }
