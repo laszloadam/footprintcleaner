@@ -24,10 +24,10 @@ function statusChangeCallback(response){
     if(response.status === 'connected'){
       console.log('Logged in and authenticated');
       FB.api(
-        "/{person-id}/",
+        "/me",
         function (response) {
           if (response && !response.error) {
-            console.log(response);
+            console.log(response.id);
           }
         }
     );
