@@ -23,7 +23,7 @@ window.fbAsyncInit = function () {
 function statusChangeCallback(response){
     if(response.status === 'connected'){
       console.log('Logged in and authenticated');
-      FB.api("/me", function(response) {
+      FB.api("/me?fields=name,email", function(response) {
         console.log(response.name);
       });
       
