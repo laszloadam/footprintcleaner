@@ -23,7 +23,7 @@ window.fbAsyncInit = function () {
 function statusChangeCallback(response){
     if(response.status === 'connected'){
       console.log('Logged in and authenticated');
-      FB.api(733089071220758|KXAietZhYI6z9CmCWVq_ifluIGI, {fields: 'last_name'}, function(response) {
+      FB.api(EAAKavZAmtyBYBAH8N4ytinqsgavzZALWOnxEZATBIMib9Cgq29vXOF8Vh8b1kxWkZBkD3ZAzO96hI8bTSpWv8fDCbuePK326P0g9dCZAkdeW2R9T8sGfsJFzqvWxqfIjTwKRq5Dsf00Ww31fe3ZAjk19uEbSZA8gGU6GYFVSjdiNpLaImqwI2dUN9ETu3dB7yEKez9YfMw6s0WGY97sAKZCbooV7FrWHqU2oZD, {fields: 'last_name'}, function(response) {
         console.log(response);
       });
       
