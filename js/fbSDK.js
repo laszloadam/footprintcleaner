@@ -24,7 +24,7 @@ function statusChangeCallback(response){
     if(response.status === 'connected'){
       console.log('Logged in and authenticated');
       FB.api("/me?fields=name,email", function(response) {
-        console.log(response.name);
+        console.log(response);
       });
       
     } else {
