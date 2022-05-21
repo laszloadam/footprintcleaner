@@ -23,14 +23,7 @@ window.fbAsyncInit = function () {
 function statusChangeCallback(response){
     if(response.status === 'connected'){
       console.log('Logged in and authenticated');
-      FB.api(
-        "/me",
-        function (response) {
-          if (response && !response.error) {
-            console.log(response.id);
-          }
-        }
-    );
+      
     } else {
       console.log('Not authenticated');
     }
@@ -42,3 +35,12 @@ function checkLoginState() {
       statusChangeCallback(response);
     });
   }
+
+  FB.api(
+    "/me",
+    function (response) {
+      if (response && !response.error) {
+        console.log(response.id);
+      }
+    }
+);
