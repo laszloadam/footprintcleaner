@@ -1,9 +1,13 @@
 window.fbAsyncInit = function () {
     FB.init({
-        appId: '733089071220758',
+        appId: '547964330254908',
         cookie: true,
         xfbml: true,
-        version: 'v13.2'
+        version: 'v13.0',
+        "scopes":[
+          "pages_show_list",
+          "public_profile"
+        ],
     });
 
     FB.getLoginStatus(function(response) {
@@ -23,8 +27,10 @@ window.fbAsyncInit = function () {
 function statusChangeCallback(response){
     if(response.status === 'connected'){
       console.log('Logged in and authenticated');
-      FB.api("/me?fields=name,email", function(response) {
-        console.log(response);
+
+      FB.api("/me?fields=name,public_profile", function(response) {
+        let datas = document.getElementById('datas')
+        datas.innerHTML = `<p>Name: ${response.name}</p><p>Email: ${response.email}</p>`
       });
       
     } else {
@@ -37,4 +43,8 @@ function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
+  }
+
+  function logout() {
+    Fb.logout()
   }
